@@ -12,10 +12,11 @@ spec:
     labels: 
       app: inventory-app
    spec:
-    - name: inventory
-      image: 398496485913.dkr.ecr.us-east-2.amazonaws.com/inventory:latest
-      imagePullPolicy: Always
-      ports:
+    containers:
+     - name: inventory
+       image: 398496485913.dkr.ecr.us-east-2.amazonaws.com/inventory:latest
+       imagePullPolicy: Always
+       ports:
        - name: http
          protocol: TCP
          containerPort: 8085
